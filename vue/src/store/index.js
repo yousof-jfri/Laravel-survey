@@ -38,7 +38,7 @@ const store = createStore({
     actions: {
         async getDashboardData({commit}){
             commit('dashboardLoading', true);
-            axiosClient.get('/dashboard')
+            return axiosClient.get('/dashboard')
                 .then(res => {
                     commit('dashboardLoading', false);
                     commit('setDashboardData', res.data)
